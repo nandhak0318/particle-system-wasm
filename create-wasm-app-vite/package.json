@@ -1,0 +1,19 @@
+{
+  "name": "wasm",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "blah": "file:../pkg"
+  },
+  "devDependencies": {
+    "vite": "^4.4.5",
+    "vite-plugin-top-level-await": "^1.3.1",
+    "vite-plugin-wasm": "^3.2.2"
+  }
+}

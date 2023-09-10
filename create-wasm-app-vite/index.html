@@ -1,0 +1,155 @@
+<!-- www/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .input-field {
+      position: relative;
+    }
+
+    .input-field input {
+      width: 210px;
+      height: 60px;
+      border-radius: 6px;
+      font-size: 18px;
+      padding: 0 15px;
+      border: 2px solid #fff;
+      background: transparent;
+      color: #fff;
+      outline: none;
+    }
+
+    .input-field label {
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      transform: translateY(-50%);
+      color: #fff;
+      font-size: 19px;
+      pointer-events: none;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      border: 2px solid #ffcc00;
+    }
+
+    input:focus~label,
+    input:valid~label {
+      top: 0;
+      left: 15px;
+      font-size: 16px;
+      padding: 0 2px;
+      background: #353842;
+    }
+
+    body {
+      background-color: #222424;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+
+    a {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    a>.btn {
+      transform: translateX(0%) translateY(0%);
+      transition: 0.3s ease-in-out;
+    }
+
+    a:hover>#btn1 {
+      transform: translateX(-5%) translateY(-24%);
+      transition: 0.3s ease-in-out;
+    }
+
+    a:hover>#btn2 {
+      transform: translateX(-2%) translateY(-12%);
+      transition: 0.3s ease-in-out;
+    }
+
+    .flex,
+    .container {
+      position: relative;
+      ;
+    }
+
+    .btn {
+      position: absolute;
+
+      width: 188px;
+      height: 70px;
+      color: white;
+      bottom: 10px;
+      font-size: 1.5rem;
+      border: solid 2px black;
+      border-radius: 4px;
+    }
+
+    #btn1 {
+      background: black;
+      z-index: 3;
+    }
+
+    #btn2 {
+      background: yellow;
+      z-index: 2;
+    }
+
+    #btn3 {
+      background: maroon;
+      z-index: 1;
+    }
+
+    canvas {
+      height: 100%;
+      width: 100%;
+      display: block;
+    }
+  </style>
+  <title>Particle System</title>
+</head>
+
+<body>
+  <div class="tr" style=" position:absolute;display: flex; top:19px; right:10px; z-index:200;gap:15px; box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);" >
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/WebAssembly_Logo.svg" alt="" width="50px">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Rust_programming_language_black_logo.svg" alt="" width="55px">
+    </div> 
+  <canvas id="particleCanvas" width="1280" height="720"></canvas>
+  <div class="flex" style="position: absolute; bottom:10px; right:50%; left:50%;">
+    
+    <div class="container">
+
+      <div class="input-field blha" style="position: absolute;
+      bottom: 90px; margin-left:-104px;">
+        <input type="text" required spellcheck="false" id="count">
+        <label>Particle Count</label>
+      </div>
+      <div class="wrap">
+        <a id="addparticles">
+          <button class="btn" id="btn1">ADD.</button>
+          <button class="btn" id="btn2"></button>
+          <button class="btn" id="btn3"></button>
+      </div>
+      </a>
+    </div>
+    <script type="module" src="./main.js"></script>
+</body>
+
+</html>
